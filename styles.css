@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&display=swap');
+
+/* --- Paleta de Cores & Fontes ---*/
+:root {
+    --red: #c21717;     /* Vermelho */
+    --orange: #e76219;  /* Laranja */
+    --yellow: #f1a512;  /* Amarelo */
+    --cyan: #04a8b4;    /* Cyan */
+    --blue: #1446a0;    /* Azul */
+    --white: #F9F6EE;    /* Branco */
+    --bg: #EBDDCC;      /* Cor de fundo */
+    --letter: #1a1a1a;  /* Cor das letras */
+
+    --font-title: "Bungee", "Impact", sans-serif;
+    --font-body: 'Fraunces', serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--letter);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.stripes {
+    width: 100%;
+    height: 25px;
+    background-image: linear-gradient(
+        180deg,
+        var(--red) 0px, var(--red) 5px,
+        var(--orange) 5px, var(--orange) 10px,
+        var(--yellow) 10px, var(--yellow) 15px,
+        var(--cyan) 15px, var(--cyan) 20px,
+        var(--blue) 20px, var(--blue) 25px
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 25px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--yellow);
+    color: var(--letter);
+    font-family: var(--font-title);
+    font-size: 16px;
+    text-decoration: none;
+    padding: 15px 35px;
+    border: 3px solid var(--letter);
+    border-radius: 4px;
+    box-shadow: 5px 5px 0px var(--letter);
+    transition: all 0.1s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px var(--letter);
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0px var(--letter);
+}
+
+/* --- Header & Nav --- */
+header {
+    background-color: var(--bg);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 40px; 
+}
+
+.header-left img {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+.logo-text {
+    font-family: var(--font-title);
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.logo-text .m { color: var(--red); }
+.logo-text .a { color: var(--orange); }
+.logo-text .n { color: var(--yellow); }
+.logo-text .i2 { color: var(--cyan); }
+.logo-text .a2 { color: var(--blue); }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px; 
+}
+
+.nav-links a {
+    font-family: var(--font-title);
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a i {
+    font-size: 20px;
+}
+
+.nav-links a:hover {
+    color: var(--yellow);
+}
+
+.nav-links .btn:hover {
+    color: var(--white); 
+}
+
+/* --- Hero --- */
+.hero {
+    position: relative;
+    padding: 70px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: var(--letter);
+    text-shadow: 4px 4px 0px var(--yellow), 8px 8px 0px var(--orange);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    line-height: 1.4;
+}
+
+.hero-logo-text {
+    font-size: 42px;
+    text-shadow: 4px 4px 0px var(--yellow), 8px 8px 0px var(--orange);
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.hero-brand {
+    color: var(--blue);
+}
+
+.hero-brand span {
+    color: var(--cyan);
+}
+
+.hero p {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--letter);
+    margin-bottom: 35px;
+    font-weight: 600;
+}
+
+/* --- Movies --- */
+.movies {
+    padding: 40px;
+}
+
+.movies h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movie-card {
+    background-color: #000;
+    border: 3px solid var(--letter);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movie-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.movie-info h3 {
+    font-size: 14px;
+    color: var(--bg);
+    margin: 0 0 10px 0;
+}
+
+   /* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px; 
+    border-top: 3px solid var(--letter);
+}
