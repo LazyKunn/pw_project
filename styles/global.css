@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&display=swap');
 
-/* --- Paleta de Cores & Fontes ---*/
+/* --- Color Palette & Fonts ---*/
 :root {
     --red: #c21717;     /* Vermelho */
     --orange: #e76219;  /* Laranja */
     --yellow: #f1a512;  /* Amarelo */
     --cyan: #04a8b4;    /* Cyan */
     --blue: #1446a0;    /* Azul */
-    --white: #F9F6EE;    /* Branco */
+    --white: #F9F6EE;   /* Branco */
+    --gray: #D3D3D3;    /* Cinza */
     --bg: #EBDDCC;      /* Cor de fundo */
     --letter: #1a1a1a;  /* Cor das letras */
 
@@ -15,6 +16,7 @@
     --font-body: 'Fraunces', serif;
 }
 
+/* --- Global Resets --- */
 body {
     background-color: var(--bg);
     color: var(--letter);
@@ -36,6 +38,7 @@ a {
     color: inherit;
 }
 
+/* --- Utility Classes --- */
 .stripes {
     width: 100%;
     height: 25px;
@@ -80,7 +83,7 @@ a {
 }
 
 /* --- Header & Nav --- */
-header {
+.main-header {
     background-color: var(--bg);
     padding: 15px 40px;
     display: flex;
@@ -94,23 +97,26 @@ header {
     gap: 40px; 
 }
 
-.header-left img {
-    width: 150px;
-    height: auto;
-    display: block;
-}
-
 .logo-text {
     font-family: var(--font-title);
     font-size: 24px;
     letter-spacing: 1px;
 }
 
-.logo-text .m { color: var(--red); }
-.logo-text .a { color: var(--orange); }
-.logo-text .n { color: var(--yellow); }
-.logo-text .i2 { color: var(--cyan); }
-.logo-text .a2 { color: var(--blue); }
+.logo-text .v, 
+.logo-text .i, 
+.logo-text .d, 
+.logo-text .e, 
+.logo-text .o { 
+    color: var(--letter); 
+    text-shadow: 2px 2px 0px var(--yellow), 4px 4px 0px var(--orange); 
+}
+
+.logo-text .m  { color: var(--red);    text-shadow: 3px 3px 0px var(--letter); }
+.logo-text .a  { color: var(--orange); text-shadow: 3px 3px 0px var(--letter); }
+.logo-text .n  { color: var(--yellow); text-shadow: 3px 3px 0px var(--letter); }
+.logo-text .i2 { color: var(--cyan);   text-shadow: 3px 3px 0px var(--letter); }
+.logo-text .a2 { color: var(--blue);   text-shadow: 3px 3px 0px var(--letter); }
 
 .nav-links {
     display: flex;
@@ -136,64 +142,7 @@ header {
     color: var(--white); 
 }
 
-/* --- Hero --- */
-.hero {
-    position: relative;
-    padding: 70px 20px;
-    text-align: center;
-    overflow: hidden;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: 36px;
-    color: var(--letter);
-    text-shadow: 4px 4px 0px var(--yellow), 8px 8px 0px var(--orange);
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    line-height: 1.4;
-}
-
-.hero-logo-text {
-    font-size: 42px;
-    text-shadow: 4px 4px 0px var(--yellow), 8px 8px 0px var(--orange);
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.hero-brand {
-    color: var(--blue);
-}
-
-.hero-brand span {
-    color: var(--cyan);
-}
-
-.hero p {
-    font-family: var(--font-body);
-    font-size: 20px;
-    color: var(--letter);
-    margin-bottom: 35px;
-    font-weight: 600;
-}
-
-/* --- Movies --- */
-.movies {
-    padding: 40px;
-}
-
-.movies h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
+/* --- Global Movie Cards (Usado na Home e no Catálogo) --- */
 .movies-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
@@ -231,8 +180,8 @@ header {
     margin: 0 0 10px 0;
 }
 
-   /* --- FOOTER --- */
-footer {
+/* --- Footer --- */
+.main-footer {
     text-align: center;
     padding: 20px;
     font-size: 14px; 

@@ -1,8 +1,18 @@
 const API_KEY = '5bc7f38e833ac2cdaf4f69c82d4fb2a5';
-const container = document.getElementById('movies-grid');
 
+/**
+ * Pede à API do TMDB os filmes mais populares dos anos 80 e 
+ * injeta os 4 primeiros no DOM da página inicial.
+ * 
+ * @async
+ * @function get80sBlockbusters
+ * @returns {Promise<void>} Não devolve nada, apenas atualiza o DOM.
+ */
 async function get80sBlockbusters() {
-  
+    const container = document.getElementById('movies-grid');
+    
+    if (!container) return;
+
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&primary_release_date.gte=1980-01-01&primary_release_date.lte=1989-12-31&page=1`;
 
     try {
@@ -16,7 +26,8 @@ async function get80sBlockbusters() {
                 ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` 
                 : 'imgs/no-image.png';
 
-            const movieCard = document.createElement('div');
+            const movieCard = document.createElement('a');
+            movieCard.href = `details.html?id=${movie.id}`;
             movieCard.classList.add('movie-card');
             
             movieCard.innerHTML = `
@@ -34,4 +45,4 @@ async function get80sBlockbusters() {
     }
 }
 
-get80sBlockbusters();
+document.addEventListener('DOMContentLoaded', get80sBlockbusters);
