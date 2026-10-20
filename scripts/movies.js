@@ -60,7 +60,7 @@ async function fetchMovies() {
         moviesToDisplay.forEach(movie => {
             const posterPath = movie.poster_path 
                 ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` 
-                : 'images/no-image.png';
+                : 'imgs/no-image.png';
 
             const movieCard = document.createElement('a');
             movieCard.href = `details.html?id=${movie.id}`;
