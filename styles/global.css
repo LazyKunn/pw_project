@@ -8,7 +8,6 @@
     --cyan: #04a8b4;    /* Cyan */
     --blue: #1446a0;    /* Azul */
     --white: #F9F6EE;   /* Branco */
-    --gray: #D3D3D3;    /* Cinza */
     --bg: #EBDDCC;      /* Cor de fundo */
     --letter: #1a1a1a;  /* Cor das letras */
 
@@ -38,7 +37,6 @@ a {
     color: inherit;
 }
 
-/* --- Utility Classes --- */
 .stripes {
     width: 100%;
     height: 25px;

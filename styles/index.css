@@ -1,9 +1,62 @@
-/* --- Hero Section --- */
+.main-header {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+}
+
+.main-header .nav-links a {
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.main-header .nav-links a:hover {
+    color: var(--yellow);
+}
+
+.logo-text .v, 
+.logo-text .i, 
+.logo-text .d, 
+.logo-text .e, 
+.logo-text .o { 
+    color: var(--white); 
+    text-shadow: 2px 2px 0px var(--yellow), 4px 4px 0px var(--orange); 
+}
+
+.logo-text .m  { color: var(--red);    text-shadow: 2px 2px 0px var(--white); }
+.logo-text .a  { color: var(--orange); text-shadow: 2px 2px 0px var(--white); }
+.logo-text .n  { color: var(--yellow); text-shadow: 2px 2px 0px var(--white); }
+.logo-text .i2 { color: var(--cyan);   text-shadow: 2px 2px 0px var(--white); }
+.logo-text .a2 { color: var(--blue);   text-shadow: 2px 2px 0px var(--white); }
+
+
 .hero-section {
     position: relative;
-    padding: 70px 20px;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 20px 80px 20px;
     text-align: center;
     overflow: hidden;
+    
+    background-image: url('../imgs/hero-banner.jpg'); 
+    background-color: var(--letter);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4)); 
+    z-index: 1;
 }
 
 .hero-content {
@@ -13,20 +66,60 @@
     margin: 0 auto;
 }
 
+.hero-section .btn {
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9);
+}
+
+.vhs-sleeve {
+    background-color: var(--bg); 
+    border: 4px solid var(--letter); 
+    position: relative;
+    overflow: hidden; 
+    box-shadow: 5px 5px 0px var(--letter); 
+    border-radius: 4px;
+}
+
+/* As faixas diagonais de cor com a tua paleta 
+.sleeve-stripes {
+    position: absolute;
+    top: 15px;
+    left: -10%;
+    height: 35px;
+    width: 120%;
+    background: linear-gradient(
+        90deg,
+        var(--red) 0%, var(--red) 20%,
+        var(--orange) 20%, var(--orange) 40%,
+        var(--yellow) 40%, var(--yellow) 60%,
+        var(--cyan) 60%, var(--cyan) 80%,
+        var(--blue) 80%, var(--blue) 100%
+    );
+    transform: rotate(-4deg);
+    border-bottom: 3px solid var(--letter);
+    border-top: 3px solid var(--letter);
+    z-index: 1;
+} */
+
+.sleeve-content {
+    padding: 80px 40px 50px 40px; 
+    position: relative;
+    z-index: 2;
+}
+
+/* Tipografia */
 .hero-section h1 {
-    font-size: 36px;
+    font-size: 32px;
     color: var(--letter);
-    text-shadow: 4px 4px 0px var(--yellow), 8px 8px 0px var(--orange);
     margin-bottom: 20px;
     letter-spacing: 2px;
     line-height: 1.4;
 }
 
 .hero-logo-text {
-    font-size: 42px;
-    text-shadow: 4px 4px 0px var(--yellow), 8px 8px 0px var(--orange);
+    font-size: 52px;
     display: inline-block;
     margin-top: 10px;
+    text-shadow: 3px 3px 0px var(--yellow), 6px 6px 0px var(--orange);
 }
 
 .hero-section p {
@@ -35,14 +128,39 @@
     color: var(--letter);
     margin-bottom: 35px;
     font-weight: 600;
+    line-height: 1.5;
+}
+
+.news-ticker {
+    background-color: var(--letter);
+    color: var(--yellow);
+    font-family: var(--font-title);
+    font-size: 16px;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.ticker-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollTicker 25s linear infinite;
+}
+
+@keyframes scrollTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 .featured-movies-section {
-    padding: 40px;
+    padding: 60px 40px;
+    background-color: var(--bg);
 }
 
 .featured-movies-section h2 {
     text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--letter);
 }

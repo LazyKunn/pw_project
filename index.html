@@ -12,7 +12,9 @@
     <title>VideoMania</title>
 </head>
 <body>
+
     <div class="stripes"></div>
+
     <header class="main-header">
         <div class="header-left">
             <a href="index.html" class="logo-text">
@@ -21,6 +23,7 @@
             <nav class="nav-links">
                 <a href="index.html">Início</a>
                 <a href="movies.html">Filmes</a>
+                <a href="about.html">Sobre</a>
             </nav>
         </div>
         
@@ -36,22 +39,34 @@
     </header>
     
     <main>
+
         <section class="hero-section">
+            <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1>BEM-VINDO AO <br>
-                    <span class="hero-logo-text">
-                        <span class="v">V</span><span class="i">I</span><span class="d">D</span><span class="e">E</span><span class="o">O</span><span class="m">M</span><span class="a">A</span><span class="n">N</span><span class="i2">I</span><span class="a2">A</span>
-                    </span>
-                </h1>
-                <p>Aqui encontrará os melhores clássicos do cinema!</p>
-                <a href="movies.html" class="btn">Explorar Clássicos</a>
+                <div class="hero-box vhs-sleeve">
+                    <div class="sleeve-content">
+                        <h1>BEM-VINDO AO <br>
+                            <span class="hero-logo-text">
+                                <span class="v">V</span><span class="i">I</span><span class="d">D</span><span class="e">E</span><span class="o">O</span><span class="m">M</span><span class="a">A</span><span class="n">N</span><span class="i2">I</span><span class="a2">A</span>
+                            </span>
+                        </h1>
+                        <p>O teu clube de vídeo de bairro... agora na internet. <br>Aperta o play nos melhores clássicos do cinema.</p>
+                        <a href="movies.html" class="btn"><i class="fa-solid fa-ticket"></i> Explorar Catálogo</a>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <div class="news-ticker">
+            <div class="ticker-text">
+                Site em construção... novos filmes em breve!
+            </div>
+        </div>
 
         <div class="stripes"></div>
 
         <section class="featured-movies-section">
-            <h2>Filmes em Destaque</h2>
+            <h2><i class="fa-solid fa-tape"></i> TOP ALUGUERES DA SEMANA</h2>
             <div id="movies-grid" class="movies-grid"></div>
         </section>
     </main>
