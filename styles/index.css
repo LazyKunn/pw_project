@@ -1,10 +1,22 @@
+/* 
+===================================================
+   INDEX.CSS - VIDEOMANIA (VERSÃO SIMPLES E LIMPA)
+===================================================
+*/
+
+/* 
+===================================================
+   1. CÓDIGO REMOVIDO (NAVBAR TRANSPARENTE E ESCURA)
+=================================================== 
+*/
+/*
 .main-header {
-    position: absolute;
     width: 100%;
     z-index: 100;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(26, 26, 26, 0.9) !important;
     backdrop-filter: blur(10px);
     box-sizing: border-box;
+    border-bottom: 3px solid var(--letter);
 }
 
 .main-header .nav-links a {
@@ -16,97 +28,95 @@
     color: var(--yellow);
 }
 
-.logo-text .v, 
-.logo-text .i, 
-.logo-text .d, 
-.logo-text .e, 
-.logo-text .o { 
+.main-header .logo-text .v, 
+.main-header .logo-text .i, 
+.main-header .logo-text .d, 
+.main-header .logo-text .e, 
+.main-header .logo-text .o { 
     color: var(--white); 
     text-shadow: 2px 2px 0px var(--yellow), 4px 4px 0px var(--orange); 
 }
+.main-header .logo-text .m  { color: var(--red);    text-shadow: 2px 2px 0px var(--letter); }
+.main-header .logo-text .a  { color: var(--orange); text-shadow: 2px 2px 0px var(--letter); }
+.main-header .logo-text .n  { color: var(--yellow); text-shadow: 2px 2px 0px var(--letter); }
+.main-header .logo-text .i2 { color: var(--cyan);   text-shadow: 2px 2px 0px var(--letter); }
+.main-header .logo-text .a2 { color: var(--blue);   text-shadow: 2px 2px 0px var(--letter); }
+*/
 
-.logo-text .m  { color: var(--red);    text-shadow: 2px 2px 0px var(--white); }
-.logo-text .a  { color: var(--orange); text-shadow: 2px 2px 0px var(--white); }
-.logo-text .n  { color: var(--yellow); text-shadow: 2px 2px 0px var(--white); }
-.logo-text .i2 { color: var(--cyan);   text-shadow: 2px 2px 0px var(--white); }
-.logo-text .a2 { color: var(--blue);   text-shadow: 2px 2px 0px var(--white); }
 
-
+/* 
+===================================================
+   2. HERO SECTION ATIVA E SIMPLIFICADA
+=================================================== 
+*/
 .hero-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--bg); /* Mantém a cor de fundo bege do site todo */
+
+    /* CÓDIGO DA IMAGEM DE FUNDO COMENTADO:
     position: relative;
-    min-height: 65vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 140px 20px 80px 20px;
-    text-align: center;
     overflow: hidden;
-    
     background-image: url('../imgs/hero-banner.jpg'); 
-    background-color: var(--letter);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    */
 }
 
+/* CÓDIGO DO OVERLAY DA IMAGEM COMENTADO:
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4)); 
+    background: radial-gradient(circle, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 100%); 
     z-index: 1;
 }
+*/
 
 .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    /* CÓDIGO DA LARGURA EXTRA COMENTADO:
     position: relative;
     z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    */
 }
 
-.hero-section .btn {
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.9);
+
+/* CÓDIGO DAS CAIXAS CENTRAIS COMENTADO (HERO-BOX E VHS-SLEEVE):
+.hero-box {
+    background-color: rgba(249, 246, 238, 0.85); 
+    backdrop-filter: blur(8px);
+    border: 4px solid var(--letter); 
+    border-radius: 6px;
+    box-shadow: 12px 12px 0px rgba(0,0,0,0.5); 
+    padding: 50px 40px;
+    text-align: center; 
 }
 
 .vhs-sleeve {
-    background-color: var(--bg); 
+    background-color: rgba(249, 246, 238, 0.94); 
+    backdrop-filter: blur(6px);
     border: 4px solid var(--letter); 
+    border-radius: 6px;
+    box-shadow: 12px 12px 0px var(--letter); 
+    overflow: hidden;
+    text-align: left; 
     position: relative;
-    overflow: hidden; 
-    box-shadow: 5px 5px 0px var(--letter); 
-    border-radius: 4px;
 }
+*/
 
-/* As faixas diagonais de cor com a tua paleta 
-.sleeve-stripes {
-    position: absolute;
-    top: 15px;
-    left: -10%;
-    height: 35px;
-    width: 120%;
-    background: linear-gradient(
-        90deg,
-        var(--red) 0%, var(--red) 20%,
-        var(--orange) 20%, var(--orange) 40%,
-        var(--yellow) 40%, var(--yellow) 60%,
-        var(--cyan) 60%, var(--cyan) 80%,
-        var(--blue) 80%, var(--blue) 100%
-    );
-    transform: rotate(-4deg);
-    border-bottom: 3px solid var(--letter);
-    border-top: 3px solid var(--letter);
-    z-index: 1;
-} */
 
-.sleeve-content {
-    padding: 80px 40px 50px 40px; 
-    position: relative;
-    z-index: 2;
-}
-
-/* Tipografia */
+/* --- Tipografia do Hero Ativa --- */
 .hero-section h1 {
     font-size: 32px;
     color: var(--letter);
@@ -122,6 +132,19 @@
     text-shadow: 3px 3px 0px var(--yellow), 6px 6px 0px var(--orange);
 }
 
+.hero-logo-text .v, 
+.hero-logo-text .i, 
+.hero-logo-text .d, 
+.hero-logo-text .e, 
+.hero-logo-text .o { 
+    color: var(--letter); 
+}
+.hero-logo-text .m  { color: var(--red);    text-shadow: 3px 3px 0px var(--letter); }
+.hero-logo-text .a  { color: var(--orange); text-shadow: 3px 3px 0px var(--letter); }
+.hero-logo-text .n  { color: var(--yellow); text-shadow: 3px 3px 0px var(--letter); }
+.hero-logo-text .i2 { color: var(--cyan);   text-shadow: 3px 3px 0px var(--letter); }
+.hero-logo-text .a2 { color: var(--blue);   text-shadow: 3px 3px 0px var(--letter); }
+
 .hero-section p {
     font-family: var(--font-body);
     font-size: 20px;
@@ -131,28 +154,52 @@
     line-height: 1.5;
 }
 
+
+/* 
+===================================================
+   3. CÓDIGO REMOVIDO (LETREIRO ROLANTE / TICKER)
+=================================================== 
+*/
+/*
 .news-ticker {
     background-color: var(--letter);
-    color: var(--yellow);
+    color: var(--white);
     font-family: var(--font-title);
-    font-size: 16px;
-    padding: 10px 0;
+    font-size: 14px;
+    padding: 12px 0;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
+    letter-spacing: 2px;
 }
 
 .ticker-text {
     display: inline-block;
     padding-left: 100%;
-    animation: scrollTicker 25s linear infinite;
+    animation: scrollTicker 28s linear infinite;
+}
+
+.ticker-text span {
+    margin: 0 25px;
+}
+
+.ticker-text i {
+    color: var(--yellow);
+    margin-right: 6px;
 }
 
 @keyframes scrollTicker {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
 }
+*/
 
+
+/* 
+===================================================
+   4. SECÇÃO DE DESTAQUES ATIVA (GRID DE FILMES)
+=================================================== 
+*/
 .featured-movies-section {
     padding: 60px 40px;
     background-color: var(--bg);

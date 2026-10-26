@@ -29,7 +29,7 @@ async function fetchMovieDetails() {
         // Tratamento da duração (Tempo do filme)
         const runtime = movie.runtime ? `${movie.runtime} MIN` : 'DURAÇÃO DESCONHECIDA';
 
-        // Tratamento dos géneros (garantir que a lista tem pelo menos 1 género lá dentro)
+        // Tratamento dos géneros
         const genres = (movie.genres && movie.genres.length > 0) ? movie.genres.map(g => g.name).join(', ') : 'Desconhecido';
 
         // Tratamento do elenco (mostrar apenas os 5 primeiros atores)
@@ -38,13 +38,13 @@ async function fetchMovieDetails() {
             cast = movie.credits.cast.slice(0, 5).map(actor => actor.name).join(', ');
         }
 
+        // NOVO: Tratamento da Tagline para as costas do VHS
+        const tagline = movie.tagline ? `"${movie.tagline}"` : `"O clássico que marcou uma geração."`;
+        
         // ==========================================
         // ÁREA PENDENTE DE IMPLEMENTAÇÃO (FASE 2)
         // ==========================================
-        // Como o stock será gerido pela nossa própria Base de Dados MySQL, deixamos o aviso visual.
         const stockText = '<i class="fa-solid fa-database"></i> A aguardar ligação à BD';
-        
-        // Mantemos o botão ativo para poder demonstrar o Alerta de funcionalidade futura
         const btnState = ''; 
 
         // 3. Injetar o HTML no ecrã
@@ -57,17 +57,36 @@ async function fetchMovieDetails() {
                             <img src="${posterPath}" alt="${movie.title}">
                         </div>
                         
-                        <!-- Traseira com estilo Autêntico Anos 80 -->
+                        <!-- NOVO: Traseira Autêntica Anos 80 (Sem sinopse repetida) -->
                         <div class="vhs-face vhs-back">
                             <div class="vhs-cover-back">
+                                <!-- O TEU TOPO ORIGINAL -->
                                 <div class="vhs-back-header">
                                     <span class="vhs-logo">VHS</span>
                                     <span class="vhs-stereo">Hi-Fi STEREO</span>
                                 </div>
-                                <h4 class="vhs-back-title">${movie.title}</h4>
-                                <p class="vhs-short-synopsis">
-                                    ${movie.overview ? movie.overview.substring(0, 160) + '...' : 'Sinopse não disponível.'}
-                                </p>
+                                
+                                <!-- O NOVO MIOLO -->
+                                <div class="vhs-middle-content">
+                                    <p class="vhs-tagline">${tagline}</p>
+                                    
+                                    <div class="vhs-rules">
+                                        <h5>AVISOS VIDEOMANIA</h5>
+                                        <ul>
+                                            <li>Rebobine a cassete.</li>
+                                            <li>Multa de 500$00/dia.</li>
+                                            <li>Afaste de campos magnéticos.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="vhs-tech-info">
+                                        <p>DISTRIBUIÇÃO EXCLUSIVA VIDEOMANIA</p>
+                                        <p>ÁUDIO: DOLBY SURROUND | FORMATO: 4:3</p>
+                                        <p>A CÓPIA NÃO AUTORIZADA É CRIME.</p>
+                                    </div>
+                                </div>
+
+                                <!-- O TEU RODAPÉ ORIGINAL -->
                                 <div class="vhs-back-footer">
                                     <div class="vhs-barcode">
                                         <i class="fa-solid fa-barcode"></i>
@@ -131,9 +150,7 @@ async function fetchMovieDetails() {
 // FUNÇÃO PENDENTE DE IMPLEMENTAÇÃO (FASE 2)
 // ==========================================
 function addToCart(id, title) {
-    // Na Fase 2, isto fará um pedido POST (AJAX) à nossa API REST em Node.js
     console.warn(`[TODO - FASE 2] Fazer POST request para /api/rent com o movieId: ${id}`);
-    
     alert(`🚧 Funcionalidade em desenvolvimento!\n\nNa Fase 2 do projeto, a ação de alugar o filme "${title}" vai comunicar com a nossa API REST para verificar o stock na base de dados MySQL e adicioná-lo ao carrinho.`);
 }
 
@@ -145,7 +162,6 @@ function setupVHSInteraction() {
     let previousMousePosition = { x: 0 };
     let currentRotation = 0; 
 
-    // Função que faz a cassete girar sozinha
     function autoSpin() {
         if (!isDragging) {
             currentRotation -= 0.4; 
@@ -156,7 +172,6 @@ function setupVHSInteraction() {
     
     autoSpin();
 
-    // Quando clicas na cassete (Pára o giro automático)
     vhsContainer.addEventListener('mousedown', (e) => {
         isDragging = true;
         previousMousePosition.x = e.clientX;
