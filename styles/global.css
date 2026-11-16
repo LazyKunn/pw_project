@@ -184,3 +184,64 @@ a {
     padding: 20px;
     font-size: 14px; 
 }
+
+/* --- Mini Cartão de Sócio (Estado Logged In) --- */
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--white);
+    border: 3px solid var(--letter);
+    padding: 5px 15px 5px 5px;
+    box-shadow: 4px 4px 0px var(--letter);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 10px;
+}
+
+.user-badge:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--letter);
+    background-color: var(--gray);
+}
+
+.user-avatar {
+    background-color: var(--yellow);
+    color: var(--letter);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--letter);
+    font-size: 14px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.user-name {
+    font-family: var(--font-title);
+    font-size: 12px;
+    color: var(--letter);
+    text-transform: uppercase;
+}
+
+.user-status {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.logout-link {
+    color: var(--letter) !important;
+    margin-left: 10px;
+}
+
+.logout-link:hover {
+    color: var(--red) !important;
+}

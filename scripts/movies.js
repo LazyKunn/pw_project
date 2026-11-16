@@ -91,7 +91,7 @@ function displayMoreMovies(count) {
     moviesToRender.forEach(movie => {
         const posterPath = movie.poster_path 
             ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` 
-            : 'imgs/no-image.png';
+            : 'imgs/sem-imagem.png'; //'imgs/no-image.png'
 
         const releaseYear = movie.release_date ? movie.release_date.substring(0, 4) : 'N/A';
 

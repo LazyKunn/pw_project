@@ -1,0 +1,162 @@
+/* 
+===================================================
+   ABOUT.CSS - VIDEOMANIA (VIBE CORPORATIVA ANOS 90)
+===================================================
+*/
+
+/* --- Hero Corporativo --- */
+.about-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--bg);
+    color: var(--letter);
+}
+
+.about-hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 0px var(--yellow), 6px 6px 0px var(--orange);
+}
+
+.about-hero p {
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: 500;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Missão e Estatísticas --- */
+.about-mission {
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+    align-items: center;
+}
+
+.mission-content {
+    flex: 1.2;
+}
+
+.mission-content h2 {
+    font-size: 36px;
+    color: var(--letter);
+    text-shadow: 2px 2px 0px var(--yellow), 4px 4px 0px var(--orange);
+    margin-bottom: 20px;
+}
+
+.mission-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--letter);
+}
+
+.mission-stats {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.stat-box {
+    background-color: var(--white);
+    border: 3px solid var(--letter);
+    border-radius: 4px;
+    padding: 30px 20px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 8px 8px 0px var(--letter);
+}
+
+.stat-box i {
+    font-size: 40px;
+    color: var(--red);
+    text-shadow: 3px 3px 0px var(--orange), 6px 6px 0px var(--yellow);
+    margin-bottom: 15px;
+}
+
+.stat-box h3 {
+    font-size: 28px;
+    color: var(--cyan);
+    text-shadow: 4px 4px 0px var(--blue);
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    font-family: var(--font-title);
+    font-size: 14px;
+    color: var(--letter);
+    margin: 0;
+}
+
+/* --- Equipa Executiva --- */
+.about-team {
+    background-color: var(--bg);
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.about-team h2 {
+    font-size: 36px;
+    color: var(--letter);
+    text-shadow: 2px 2px 0px var(--yellow), 4px 4px 0px var(--orange);
+    margin-bottom: 60px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background-color: var(--white);
+    border: 3px solid var(--letter);
+    border-radius: 4px;
+    padding: 40px 30px;
+    flex: 1;
+    box-shadow: 10px 10px 0px var(--letter);
+    text-align: left;
+    position: relative;
+}
+
+/* O crachá visual do executivo */
+.team-photo {
+    background-color: var(--yellow);
+    width: 90px;
+    height: 90px;
+    border: 3px solid var(--letter);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 36px;
+    color: var(--letter);
+}
+
+.team-card h3 {
+    font-size: 28px;
+    color: var(--letter);
+    margin-bottom: 5px;
+}
+
+.job-title {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--cyan);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.team-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--letter);
+    margin: 0;
+}

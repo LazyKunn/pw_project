@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico" type="image/svg+xml">
+    
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>VideoMania | Carrinho</title>
+</head>
+<body>
+
+    <div class="stripes"></div>
+
+    <header class="main-header">
+        <div class="header-left">
+            <a href="index.html" class="logo-text">
+                <span class="v">V</span><span class="i">I</span><span class="d">D</span><span class="e">E</span><span class="o">O</span><span class="m">M</span><span class="a">A</span><span class="n">N</span><span class="i2">I</span><span class="a2">A</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="movies.html">Filmes</a>
+                <a href="about.html">Sobre</a>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+            <nav class="nav-links">
+                <a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a href="login.html">Iniciar Sessão</a>
+                <a href="register.html" class="btn">Criar Conta</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="cart-main">
+        <div class="cart-container">
+            
+            <div class="cart-items-section">
+                <h2>CARRINHO DE COMPRAS</h2>
+                
+                <div class="cart-list">
+                    <!-- Item Estático 1 -->
+                    <div class="cart-item">
+                        <!-- Nova Mini Caixa VHS -->
+                        <div class="cart-vhs-box">
+                            <img src="https://image.tmdb.org/t/p/w500/rdrVW0qN16Ho8BDwmcqW9oLQtn3.jpg" alt="Sexta-Feira 13" onerror="this.src='imgs/sem-imagem.png'">
+                        </div>
+
+                        
+                        
+                        <div class="item-details">
+                            <h3>Sexta-Feira 13</h3>
+                            <p class="item-meta">Formato: VHS | Aluguer: 48 Horas</p>
+                        </div>
+                        <div class="item-price">
+                            <span>2.50 €</span>
+                            <button class="remove-btn" onclick="removeItem()"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Item Estático 2 -->
+                    <div class="cart-item">
+                        <!-- Nova Mini Caixa VHS -->
+                        <div class="cart-vhs-box">
+                            <img src="https://image.tmdb.org/t/p/w500/rZvxTfmaOxWeOeU9w9Vkq5elagp.jpg" alt="O Exterminador Implacável" onerror="this.src='imgs/sem-imagem.png'">
+                        </div>
+                        
+                        <div class="item-details">
+                            <h3>O Exterminador Implacável</h3>
+                            <p class="item-meta">Formato: VHS | Aluguer: 48 Horas</p>
+                        </div>
+                        <div class="item-price">
+                            <span>2.50 €</span>
+                            <button class="remove-btn" onclick="removeItem()"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-summary-section">
+                <div class="summary-box">
+                    <h2>TALÃO DE ALUGUER</h2>
+                    
+                    <div class="summary-line">
+                        <span>Quantidade:</span>
+                        <span>2 Filmes</span>
+                    </div>
+                    
+                    <div class="summary-line">
+                        <span>Subtotal:</span>
+                        <span>5.00 €</span>
+                    </div>
+                    
+                    <div class="summary-line">
+                        <span>IVA (23%):</span>
+                        <span>1.15 €</span>
+                    </div>
+                    
+                    <hr class="summary-divider">
+                    
+                    <div class="summary-line total-line">
+                        <span>TOTAL:</span>
+                        <span>6.15 €</span>
+                    </div>
+
+                    <button class="btn checkout-btn" onclick="checkout()">PAGAMENTO</button>
+                    
+                    <p class="summary-note"><i class="fa-solid fa-circle-info"></i> Devolução obrigatória até às 20h00 de quarta-feira. Rebobine sempre a cassete.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="stripes"></div>
+    
+    <footer class="main-footer">
+        <p>&copy; 2026 VideoMania</p>
+        <p>André Silva & Diogo Silva</p>
+    </footer>
+
+    <!-- Script rápido para os botões de simulação da Fase 1 -->
+    <script>
+        function removeItem() {
+            alert('Ação bloqueada (Fase 1).\nNa próxima fase, isto irá remover o filme do teu carrinho.');
+        }
+
+        function checkout() {
+            alert('Pagamento processado com sucesso!\n\nAs tuas cassetes estão prontas para levantamento ao balcão. Não te esqueças de trazer o teu cartão de sócio VideoMania.');
+        }
+    </script>
+
+</body>
+</html>

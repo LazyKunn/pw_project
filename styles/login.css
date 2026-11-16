@@ -1,0 +1,138 @@
+/* 
+===================================================
+   LOGIN.CSS - VIDEOMANIA (BALCÃO DE SÓCIOS)
+===================================================
+*/
+
+.auth-main {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    background-color: var(--bg);
+}
+
+.auth-container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--white);
+    border: 4px solid var(--letter);
+    box-shadow: 12px 12px 0px var(--letter);
+    border-radius: 4px;
+}
+
+.auth-box {
+    flex: 1;
+    padding: 50px 40px;
+}
+
+/* O lado do login tem um fundo branco limpo */
+.login-box {
+    background-color: var(--white);
+}
+
+/* O lado do registo tem um fundo bege para simular a ficha de papel */
+.register-box {
+    background-color: #FDF9F1; 
+}
+
+/* Linha picotada a dividir o balcão */
+.auth-divider {
+    width: 4px;
+    background: repeating-linear-gradient(
+        to bottom, 
+        var(--letter), 
+        var(--letter) 10px, 
+        transparent 10px, 
+        transparent 20px
+    );
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.auth-header h2 {
+    font-size: 26px;
+    color: var(--letter);
+    margin-bottom: 8px;
+    border-bottom: 3px solid var(--letter);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.auth-header p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    font-family: var(--font-title);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-family: var(--font-title);
+    font-size: 14px;
+    color: var(--letter);
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    border: 3px solid var(--letter);
+    font-family: var(--font-body);
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 4px 4px 0px var(--letter);
+    transform: translate(-2px, -2px);
+}
+
+.auth-btn {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 18px;
+    padding: 18px;
+}
+
+/* Diferenciação de cor no botão de criar conta para não confundir o utilizador */
+.register-btn {
+    background-color: var(--cyan);
+}
+
+.register-btn:hover {
+    background-color: var(--blue);
+}
+
+/* Responsividade: Empilha as caixas em ecrãs pequenos */
+@media (max-width: 800px) {
+    .auth-container {
+        flex-direction: column;
+    }
+    
+    .auth-divider {
+        width: 100%;
+        height: 4px;
+        background: repeating-linear-gradient(
+            to right, 
+            var(--letter), 
+            var(--letter) 10px, 
+            transparent 10px, 
+            transparent 20px
+        );
+    }
+}

@@ -24,7 +24,7 @@ async function get80sBlockbusters() {
         data.results.slice(0, 4).forEach(movie => {
             const posterPath = movie.poster_path 
                 ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` 
-                : 'imgs/no-image.png';
+                : 'imgs/sem-imagem.png'; //'imgs/no-image.png'
 
             const movieCard = document.createElement('a');
             movieCard.href = `details.html?id=${movie.id}`;

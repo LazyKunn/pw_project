@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico" type="image/svg+xml">
+    
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/login.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>VideoMania | Balcão de Sócios</title>
+</head>
+<body>
+
+    <div class="stripes"></div>
+
+    <header class="main-header">
+        <div class="header-left">
+            <a href="index.html" class="logo-text">
+                <span class="v">V</span><span class="i">I</span><span class="d">D</span><span class="e">E</span><span class="o">O</span><span class="m">M</span><span class="a">A</span><span class="n">N</span><span class="i2">I</span><span class="a2">A</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="movies.html">Filmes</a>
+                <a href="about.html">Sobre</a>
+            </nav>
+        </div>
+        
+        <div class="header-right">
+            <nav class="nav-links">
+                <a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                
+                <div class="user-badge">
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">André Silva</span>
+                        <span class="user-status">Sócio Nº 402</span>
+                    </div>
+                </div>
+                
+                <!-- Botão discreto para simular o Logout -->
+                <a href="login.html" class="logout-link" title="Terminar Sessão">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="auth-main">
+        <div class="auth-container">
+            
+            <!-- ESQUERDA: Login de Sócio -->
+            <div class="auth-box login-box">
+                <div class="auth-header">
+                    <h2><i class="fa-solid fa-id-card"></i> JÁ SOU SÓCIO</h2>
+                    <p>Apresente o seu cartão no balcão.</p>
+                </div>
+                
+                <!-- Adicionado 'onsubmit' para simular a Fase 1 sem recarregar a página -->
+                <form onsubmit="simularLogin(event)">
+                    <div class="input-group">
+                        <label for="login-email">Nº de Sócio ou Email</label>
+                        <input type="text" id="login-email" placeholder="Ex: socio1985@email.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="login-pin">PIN (Password)</label>
+                        <input type="password" id="login-pin" placeholder="****" required>
+                    </div>
+                    <button type="submit" class="btn auth-btn">
+                        VALIDAR CARTÃO
+                    </button>
+                </form>
+            </div>
+
+            <!-- DIVISÓRIA PICOTADA NO MEIO -->
+            <div class="auth-divider"></div>
+
+            <!-- DIREITA: Criar Novo Cartão -->
+            <div class="auth-box register-box">
+                <div class="auth-header">
+                    <h2><i class="fa-solid fa-user-plus"></i> NOVO CARTÃO</h2>
+                    <p>Preencha a ficha de inscrição.</p>
+                </div>
+                
+                <form onsubmit="simularRegisto(event)">
+                    <div class="input-group">
+                        <label for="reg-nome">Nome Completo</label>
+                        <input type="text" id="reg-nome" placeholder="O teu nome" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" placeholder="O teu email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-pin">Cria um PIN (Password)</label>
+                        <input type="password" id="reg-pin" placeholder="Mínimo 6 caracteres" minlength="6" required>
+                    </div>
+                    <button type="submit" class="btn auth-btn register-btn">
+                        IMPRIMIR CARTÃO
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="stripes"></div>
+    
+    <footer class="main-footer">
+        <p>&copy; 2026 VideoMania</p>
+        <p>André Silva & Diogo Silva</p>
+    </footer>
+
+    <!-- Script de Demonstração para a Fase 1 -->
+    <script>
+        function simularLogin(e) {
+            e.preventDefault();
+            alert('📼 Bem-vindo de volta ao VideoMania!\n\nCartão validado com sucesso. (Simulação Fase 1)');
+            window.location.href = 'index.html';
+        }
+
+        function simularRegisto(e) {
+            e.preventDefault();
+            alert('🎉 Bem-vindo ao clube!\n\nO teu cartão de sócio foi impresso e está pronto a usar. (Simulação Fase 1)');
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>

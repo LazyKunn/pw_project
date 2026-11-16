@@ -18,7 +18,7 @@ async function fetchMovieDetails() {
         const response = await fetch(url);
         const movie = await response.json();
 
-        // Tratamento do cartaz (corrigido para a pasta images/)
+        // Tratamento do cartaz
         const posterPath = movie.poster_path 
             ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` 
             : 'imgs/no-image.png';
@@ -32,19 +32,20 @@ async function fetchMovieDetails() {
         // Tratamento dos géneros
         const genres = (movie.genres && movie.genres.length > 0) ? movie.genres.map(g => g.name).join(', ') : 'Desconhecido';
 
-        // Tratamento do elenco (mostrar apenas os 5 primeiros atores)
+        // Tratamento do elenco
         let cast = 'Elenco não disponível.';
         if (movie.credits && movie.credits.cast && movie.credits.cast.length > 0) {
             cast = movie.credits.cast.slice(0, 5).map(actor => actor.name).join(', ');
         }
 
-        // NOVO: Tratamento da Tagline para as costas do VHS
-        const tagline = movie.tagline ? `"${movie.tagline}"` : `"O clássico que marcou uma geração."`;
-        
+        // Tratamento da Tagline para as costas do VHS
+        const tagline = movie.tagline ? `"${movie.tagline}"` : `"Um clássico intemporal selecionado pelo seu Clube de Vídeo."`;
+
         // ==========================================
-        // ÁREA PENDENTE DE IMPLEMENTAÇÃO (FASE 2)
+        // DADOS ESTÁTICOS PARA A FASE 1
         // ==========================================
-        const stockText = '<i class="fa-solid fa-database"></i> A aguardar ligação à BD';
+        // Simula a quantidade de cópias disponíveis na loja
+        const stockText = '<i class="fa-solid fa-box-open"></i> 3 Cópias Disponíveis';
         const btnState = ''; 
 
         // 3. Injetar o HTML no ecrã
@@ -57,16 +58,14 @@ async function fetchMovieDetails() {
                             <img src="${posterPath}" alt="${movie.title}">
                         </div>
                         
-                        <!-- NOVO: Traseira Autêntica Anos 80 (Sem sinopse repetida) -->
+                        <!-- Traseira Autêntica Anos 80 -->
                         <div class="vhs-face vhs-back">
                             <div class="vhs-cover-back">
-                                <!-- O TEU TOPO ORIGINAL -->
                                 <div class="vhs-back-header">
                                     <span class="vhs-logo">VHS</span>
                                     <span class="vhs-stereo">Hi-Fi STEREO</span>
                                 </div>
                                 
-                                <!-- O NOVO MIOLO -->
                                 <div class="vhs-middle-content">
                                     <p class="vhs-tagline">${tagline}</p>
                                     
@@ -86,7 +85,6 @@ async function fetchMovieDetails() {
                                     </div>
                                 </div>
 
-                                <!-- O TEU RODAPÉ ORIGINAL -->
                                 <div class="vhs-back-footer">
                                     <div class="vhs-barcode">
                                         <i class="fa-solid fa-barcode"></i>
@@ -129,7 +127,7 @@ async function fetchMovieDetails() {
                 </div>
                 
                 <div class="rent-action">
-                    <span class="stock-info" style="color: var(--color-orange); font-size: 14px;">${stockText}</span>
+                    <span class="stock-info" style="color: var(--cyan); font-size: 14px; font-family: var(--font-title);">${stockText}</span>
                     <button class="btn" ${btnState} onclick="addToCart(${movie.id}, '${movie.title.replace(/'/g, "\\'")}')">
                         <i class="fa-solid fa-tape"></i> ALUGAR FILME
                     </button>
@@ -147,11 +145,11 @@ async function fetchMovieDetails() {
 }
 
 // ==========================================
-// FUNÇÃO PENDENTE DE IMPLEMENTAÇÃO (FASE 2)
+// SIMULAÇÃO DE CARRINHO PARA A FASE 1
 // ==========================================
 function addToCart(id, title) {
-    console.warn(`[TODO - FASE 2] Fazer POST request para /api/rent com o movieId: ${id}`);
-    alert(`🚧 Funcionalidade em desenvolvimento!\n\nNa Fase 2 do projeto, a ação de alugar o filme "${title}" vai comunicar com a nossa API REST para verificar o stock na base de dados MySQL e adicioná-lo ao carrinho.`);
+    // Apresenta feedback visual imediato ao professor/utilizador
+    alert(`📼 Excelente escolha!\n\nA cassete do filme "${title}" foi adicionada ao teu carrinho de aluguer.\n\n(Funcionalidade estática de demonstração - Fase 1).`);
 }
 
 function setupVHSInteraction() {
